@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
 import * as StellarSdk from 'stellar-sdk';
 
 import { Tabs, Tab } from 'react-bootstrap';
@@ -22,7 +21,7 @@ interface MyObj {
     balances: number[];
 }
 
-interface IProps extends RouteComponentProps<{}> {
+interface IProps {
     address?: string;
     addressIsValid?: boolean;
     // handleSelect: (tabKey: number) => any;
