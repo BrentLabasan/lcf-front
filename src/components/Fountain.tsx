@@ -41,46 +41,46 @@ export default class Fountain extends React.Component<Props, State>  {
             lastEnteredAddress: ''
         };
 
-        // this.handleSelect = this.handleSelect.bind(this);
+        this.handleSelect = this.handleSelect.bind(this);
     }
 
     changeLastEnteredAddress = (address?: string) => {
-        this.setState({lastEnteredAddress: address});
+        this.setState({ lastEnteredAddress: address });
     }
 
-    handleSelect = (eventKey: number, e: React.SyntheticEvent<{}>): void => {
-        // alert(`selected ${key}`);
+    handleSelect = (eventKey: any) => {
+        // eventKey.
         switch (eventKey) {
             case 1: {
-                this.setState({ key: eventKey, selectedToken: "SECOND" });
+                this.setState({ key: eventKey, selectedToken: 'SECOND' });
                 break;
             }
             case 2: {
-                this.setState({ key: eventKey, selectedToken: "MINUTE" });
+                this.setState({ key: eventKey, selectedToken: 'MINUTE' });
                 break;
             }
             case 3: {
-                this.setState({ key: eventKey, selectedToken: "HOUR" });
+                this.setState({ key: eventKey, selectedToken: 'HOUR' });
                 break;
             }
             case 4: {
-                this.setState({ key: eventKey, selectedToken: "DAY" });
+                this.setState({ key: eventKey, selectedToken: 'DAY' });
                 break;
             }
             case 5: {
-                this.setState({ key: eventKey, selectedToken: "WEEK" });
+                this.setState({ key: eventKey, selectedToken: 'WEEK' });
                 break;
             }
             case 6: {
-                this.setState({ key: eventKey, selectedToken: "MONTH" });
+                this.setState({ key: eventKey, selectedToken: 'MONTH' });
                 break;
             }
             case 7: {
-                this.setState({ key: eventKey, selectedToken: "YEAR" });
+                this.setState({ key: eventKey, selectedToken: 'YEAR' });
                 break;
             }
             default: {
-                //statements; 
+                // statements; 
                 break;
             }
         }
@@ -88,9 +88,10 @@ export default class Fountain extends React.Component<Props, State>  {
     }
 
     public render() {
-        return <div>
+        return (
+        <div>
             {/* <Tabs defaultActiveKey={3} id="uncontrolled-tab-example" animation={false}> */}
-<br/>
+            <br />
             <Tabs activeKey={this.state.key} onSelect={this.handleSelect} id="uncontrolled-tab-example" animation={false}>
 
                 {/* <Tabs activeKey={this.state.key} onSelect={this.handleSelect} animation={false} id="controlled-tab-example"> */}
@@ -117,6 +118,7 @@ export default class Fountain extends React.Component<Props, State>  {
                     <Instructions tokenName="YEAR" issuerAccountId="GAHE3PVC4QE5TBOMXKVOQF56ZMOPSDJ6WSLQJPDNSPROVRCXRBUPGLFU" address={this.state.address} addressIsValid={this.state.addressIsValid} hasEnoughXlm={this.state.hasEnoughXlm} canAcceptToken={this.state.canAcceptToken} selectedToken={this.state.selectedToken} />
                 </Tab>
             </Tabs>
-        </div>;
+        </div>
+        );
     }
 }

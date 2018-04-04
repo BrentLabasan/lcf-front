@@ -2,15 +2,16 @@ import * as React from 'react';
 
 export default class Home extends React.Component {
     public render() {
-        return <div>
-            <h1>Labasan Crypto Fountain</h1>
+        return (
+            <div>
+                <h1>Labasan Crypto Fountain</h1>
 
-            <h2>FOUNTAIN</h2>
+                <h2>FOUNTAIN</h2>
 
-            <h2>LEARN</h2>
+                <h2>LEARN</h2>
 
-            <h2>SHARE</h2>
-{/* 
+                <h2>SHARE</h2>
+                {/* 
             <p>Welcome to your new single-page application, built with:</p>
             <ul>
                 <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
@@ -27,6 +28,7 @@ export default class Home extends React.Component {
                 <li><strong>Server-side prerendering</strong>. To optimize startup time, your React application is first rendered on the server. The initial HTML and state is then transferred to the browser, where client-side code picks up where the server left off.</li>
             </ul> */}
 
-        </div>;
+            </div>
+        );
     }
 }

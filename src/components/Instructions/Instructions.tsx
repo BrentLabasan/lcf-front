@@ -3,7 +3,7 @@ import { Button, Grid, Row, Col } from 'react-bootstrap';
 import * as StellarSdk from 'stellar-sdk';
 import * as moment from 'moment';
 
-import * as FontAwesome from 'react-icons/lib/md'
+import * as FontAwesome from 'react-icons/lib/md';
 
 import * as jquery from 'jquery';
 
@@ -42,7 +42,7 @@ export default class Instructions extends React.Component<Props, State> {
             hasEnoughXlm: this.props.hasEnoughXlm,
             canAcceptToken: this.props.canAcceptToken,
             processingReceiveRequest: false
-        }
+        };
     }
 
     meow = (address: string) => {
@@ -99,7 +99,7 @@ export default class Instructions extends React.Component<Props, State> {
 
                 });
         } else { // if query entered into field isn't a valid public key
-            console.log("query entered into field isn't a valid public key")
+            console.log("query entered into field isn't a valid public key");
             this.setState({ addressIsValid: false, hasEnoughXlm: false, canAcceptToken: false });
         }
 
