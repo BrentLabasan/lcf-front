@@ -17,7 +17,7 @@ class App extends React.Component {
               </Navbar.Brand>
               <Navbar.Toggle />
             </Navbar.Header>
-
+            <Navbar.Collapse>
             <Nav>
               <NavDropdown eventKey={1} title="FOUNTAIN" id="basic-nav-dropdown">
                 <MenuItem eventKey={1.1}>XLM (Stellar Lumens)</MenuItem>
@@ -39,8 +39,8 @@ class App extends React.Component {
               <NavItem eventKey={2} href="#">
                 ABOUT
               </NavItem>
-
             </Nav>
+            </Navbar.Collapse>
           </Grid>
         </Navbar>
       </div>
