@@ -138,6 +138,7 @@ export default class Instructions extends React.Component<Props, State> {
                 this.setState({ processingReceiveRequest: true });
             }
         }).done((data) => {
+            this.setState({ processingReceiveRequest: false });
             alert(data);
         });
     }
