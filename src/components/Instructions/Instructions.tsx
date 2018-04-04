@@ -12,10 +12,6 @@ interface Props {
     issuerAccountId: string;
     address?: string;
     addressIsValid?: boolean;
-    // canAcceptToken?: boolean;
-
-    // meow: (address: string) => any;
-    // selectedToken: string;
     hasEnoughXlm?: boolean;
     canAcceptToken?: boolean;
     selectedToken: string;

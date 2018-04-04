@@ -29,7 +29,7 @@ class Container extends React.Component<Props, State> {
 
   render() {
     return (
-      <div>
+      <div style={{maxWidth: 1200, margin: "0 auto", display: "block"}}>
         <Navbar inverse={false} fixedTop={true}>
           <Grid>
             <Navbar.Header>
