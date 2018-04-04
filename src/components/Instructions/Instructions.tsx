@@ -128,6 +128,20 @@ export default class Instructions extends React.Component<Props, State> {
         });
     }
 
+    testApi = () => {
+        jquery.post("https://lcf-back.herokuapp.com/user", {            // Source: "dummy data",
+            Destination: this.state.address,
+            TokenName: this.props.tokenName,
+            Amount: 2,
+            SendStart: moment().format(),
+            beforeSend: () => {
+                this.setState({ processingReceiveRequest: true });
+            }
+        }).done((data) => {
+            alert(data);
+        });
+    }
+
     public render() {
 
         let checkboxStep1 = this.state.addressIsValid ? <FontAwesome.MdCheckBox /> : <FontAwesome.MdCheckBoxOutlineBlank />;
@@ -142,6 +156,7 @@ export default class Instructions extends React.Component<Props, State> {
             <Grid>
                 <Row className="show-grid">
                     <Col xs={12}>
+                        <input type="button" onClick={this.testApi} / >
                         <h1>Instructions To Receive {this.props.tokenName} Tokens</h1>
                         <ol>
                             <li>{checkboxStep1} Enter your Stellar account's public address/key.
