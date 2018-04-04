@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Navbar, Grid, Jumbotron } from 'react-bootstrap';
+import { Navbar, Grid } from 'react-bootstrap';
 
 import './App.css';
 
@@ -9,29 +9,16 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Navbar inverse={true} fixedTop={true}>
+        <Navbar inverse={false} fixedTop={true}>
           <Grid>
             <Navbar.Header>
               <Navbar.Brand>
-                <a href="/">React App</a>
+                <a href="/">LABASAN CRYPTO FOUNTAIN<sup style={{marginLeft: 5, fontSize: 12, fontWeight: "bold", color: "orange"}}>BETA</sup></a>
               </Navbar.Brand>
               <Navbar.Toggle />
             </Navbar.Header>
           </Grid>
         </Navbar>
-        <Jumbotron>
-          <Grid>
-            <h1>Welcome to React</h1>
-            <p>
-              {/* <Button
-                bsStyle="success"
-                bsSize="large"
-                href="http://react-bootstrap.github.io/components.html"
-                target="_blank">
-              </Button> */}
-            </p>
-          </Grid>
-        </Jumbotron>
       </div>
     );
   }
