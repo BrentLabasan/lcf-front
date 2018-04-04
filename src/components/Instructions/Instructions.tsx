@@ -139,7 +139,7 @@ export default class Instructions extends React.Component<Props, State> {
             }
         }).done((data) => {
             this.setState({ processingReceiveRequest: false });
-            alert(data);
+            console.log(data);
         });
     }
 
