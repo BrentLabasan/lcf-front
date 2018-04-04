@@ -2,9 +2,10 @@ import * as React from 'react';
 
 export default class About extends React.Component {
     public render() {
-        return <div>
+        return (
+        <div>
             <h1>About</h1>
-            <p></p>
-        </div>;
+        </div>
+        );
     }
 }

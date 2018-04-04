@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { Navbar, Grid, Jumbotron, Button} from 'react-bootstrap';
+import { Navbar, Grid, Jumbotron } from 'react-bootstrap';
 
 import './App.css';
-
 
 // const logo = require('./logo.svg');
 
@@ -10,7 +9,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Navbar inverse fixedTop>
+        <Navbar inverse={true} fixedTop={true}>
           <Grid>
             <Navbar.Header>
               <Navbar.Brand>
@@ -24,13 +23,12 @@ class App extends React.Component {
           <Grid>
             <h1>Welcome to React</h1>
             <p>
-              <Button
+              {/* <Button
                 bsStyle="success"
                 bsSize="large"
                 href="http://react-bootstrap.github.io/components.html"
                 target="_blank">
-                View React Bootstrap Docs
-              </Button>
+              </Button> */}
             </p>
           </Grid>
         </Jumbotron>

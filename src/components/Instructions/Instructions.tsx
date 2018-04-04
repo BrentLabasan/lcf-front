@@ -7,7 +7,7 @@ import * as FontAwesome from 'react-icons/lib/md'
 
 import * as jquery from 'jquery';
 
-interface IProps {
+interface Props {
     tokenName: string;
     issuerAccountId: string;
     address?: string;
@@ -22,7 +22,7 @@ interface IProps {
 
 }
 
-interface IState {
+interface State {
     address?: string;
     addressIsValid?: boolean;
     processingReceiveRequest: boolean;
@@ -30,9 +30,9 @@ interface IState {
     hasEnoughXlm?: boolean;
 }
 
-export default class Instructions extends React.Component<IProps, IState> {
+export default class Instructions extends React.Component<Props, State> {
 
-    constructor(props: IProps) {
+    constructor(props: Props) {
         super(props);
         // set initial state
 
@@ -78,7 +78,6 @@ export default class Instructions extends React.Component<IProps, IState> {
                         // alert("less than 4.5");
                     }
 
-
                     // Step 3: Ensure account can accept asset. 
                     let canAcceptToken = false;
                     result.balances.forEach((b: any) => {
@@ -98,8 +97,6 @@ export default class Instructions extends React.Component<IProps, IState> {
                         this.setState({ canAcceptToken: false });
                     }
 
-
-
                 });
         } else { // if query entered into field isn't a valid public key
             console.log("query entered into field isn't a valid public key")
@@ -108,8 +105,6 @@ export default class Instructions extends React.Component<IProps, IState> {
 
         this.setState({ address: address });
     }
-
-
 
     addressFieldChange = (e: React.FormEvent<HTMLInputElement>) => {
         // console.log(e.currentTarget.value)
@@ -129,7 +124,7 @@ export default class Instructions extends React.Component<IProps, IState> {
             }
         }).done((data) => {
             this.setState({ processingReceiveRequest: false });
-            alert(this.props.tokenName +  " sent to " + this.state.address);
+            alert(this.props.tokenName + " sent to " + this.state.address);
         });
     }
 
@@ -142,7 +137,6 @@ export default class Instructions extends React.Component<IProps, IState> {
         let iconProccessing = <div className="spinner"><h3>PROCESSING</h3><div className="rect1"></div><div className="rect2"> </div><div className="rect3"> </div><div className="rect4"> </div><div className="rect5"> </div></div>;
 
         let finalStep = this.state.addressIsValid && this.state.hasEnoughXlm && this.state.canAcceptToken && !this.state.processingReceiveRequest ? <li><Button bsStyle="success" onClick={this.handleClick}>Receive</Button></li> : <li><Button bsStyle="success" onClick={this.handleClick} disabled>Receive</Button></li>;
-
 
         return <div>
             <Grid>

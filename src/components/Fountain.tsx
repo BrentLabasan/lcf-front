@@ -1,10 +1,9 @@
 import * as React from 'react';
-import * as StellarSdk from 'stellar-sdk';
 
-import { Tabs, Tab } from 'react-bootstrap';
+import { Tabs, Tab, SelectCallback } from 'react-bootstrap';
 import Instructions from './Instructions/Instructions';
 
-interface IState {
+interface State {
     selectedToken: string;
     issuerAccountId: string;
     address?: string;
@@ -12,20 +11,13 @@ interface IState {
     hasEnoughXlm: boolean;
     canAcceptToken: boolean;
     key?: number;
-    onSelect?: Function;
     lastEnteredAddress?: string;
-
 }
 
-interface MyObj {
-    balances: number[];
-}
-
-interface IProps {
+interface Props {
     address?: string;
     addressIsValid?: boolean;
-    // handleSelect: (tabKey: number) => any;
-    onSelect?: Function;
+    onSelect?: SelectCallback;
     key: number;
 
     hasEnoughXlm: boolean;
@@ -34,20 +26,20 @@ interface IProps {
 
 }
 
-export default class Fountain extends React.Component<IProps, IState>  {
-    constructor(props: IProps, context: any) {
-        super(props, context);
+export default class Fountain extends React.Component<Props, State>  {
+    constructor(props: Props) {
+        super(props);
         // set initial state
         this.state = {
-            selectedToken: "SECOND",
-            issuerAccountId: "",
-            address: "",
+            selectedToken: 'SECOND',
+            issuerAccountId: '',
+            address: '',
             addressIsValid: false,
             hasEnoughXlm: false,
             canAcceptToken: false,
             key: 1,
-            lastEnteredAddress: ""
-        }
+            lastEnteredAddress: ''
+        };
 
         // this.handleSelect = this.handleSelect.bind(this);
     }
@@ -56,37 +48,35 @@ export default class Fountain extends React.Component<IProps, IState>  {
         this.setState({lastEnteredAddress: address});
     }
 
-
-    handleSelect = (key: any) => {
+    handleSelect = (eventKey: number, e: React.SyntheticEvent<{}>): void => {
         // alert(`selected ${key}`);
-
-        switch (key) {
+        switch (eventKey) {
             case 1: {
-                this.setState({ key: key, selectedToken: "SECOND" });
+                this.setState({ key: eventKey, selectedToken: "SECOND" });
                 break;
             }
             case 2: {
-                this.setState({ key: key, selectedToken: "MINUTE" });
+                this.setState({ key: eventKey, selectedToken: "MINUTE" });
                 break;
             }
             case 3: {
-                this.setState({ key: key, selectedToken: "HOUR" });
+                this.setState({ key: eventKey, selectedToken: "HOUR" });
                 break;
             }
             case 4: {
-                this.setState({ key: key, selectedToken: "DAY" });
+                this.setState({ key: eventKey, selectedToken: "DAY" });
                 break;
             }
             case 5: {
-                this.setState({ key: key, selectedToken: "WEEK" });
+                this.setState({ key: eventKey, selectedToken: "WEEK" });
                 break;
             }
             case 6: {
-                this.setState({ key: key, selectedToken: "MONTH" });
+                this.setState({ key: eventKey, selectedToken: "MONTH" });
                 break;
             }
             case 7: {
-                this.setState({ key: key, selectedToken: "YEAR" });
+                this.setState({ key: eventKey, selectedToken: "YEAR" });
                 break;
             }
             default: {
@@ -96,7 +86,6 @@ export default class Fountain extends React.Component<IProps, IState>  {
         }
 
     }
-
 
     public render() {
         return <div>

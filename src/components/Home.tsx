@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
 
-export default class Home extends React.Component<RouteComponentProps<{}>, {}> {
+export default class Home extends React.Component {
     public render() {
         return <div>
             <h1>Labasan Crypto Fountain</h1>
