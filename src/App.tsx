@@ -24,21 +24,21 @@ class App extends React.Component {
             <Navbar.Collapse>
             <Nav>
               <NavDropdown eventKey={1} title="FOUNTAIN" id="basic-nav-dropdown">
-                <MenuItem onSelect={this.onSelect} eventKey={1.1}>XLM (Stellar Lumens)</MenuItem>
+                <MenuItem onSelect={this.onSelect} eventKey={"XLM"}>XLM (Stellar Lumens)</MenuItem>
                 <MenuItem divider />
-                <MenuItem onSelect={this.onSelect} eventKey={1.2}>SECOND</MenuItem>
-                <MenuItem onSelect={this.onSelect} eventKey={1.3}>MINUTE</MenuItem>
-                <MenuItem onSelect={this.onSelect} eventKey={1.4}>HOUR</MenuItem>
-                <MenuItem onSelect={this.onSelect} eventKey={1.5}>DAY</MenuItem>
-                <MenuItem onSelect={this.onSelect} eventKey={1.6}>WEEK</MenuItem>
-                <MenuItem onSelect={this.onSelect} eventKey={1.7}>MONTH</MenuItem>
-                <MenuItem onSelect={this.onSelect} eventKey={1.8}>YEAR</MenuItem>
+                <MenuItem onSelect={this.onSelect} eventKey={"SECOND"}>SECOND</MenuItem>
+                <MenuItem onSelect={this.onSelect} eventKey={"MINUTE"}>MINUTE</MenuItem>
+                <MenuItem onSelect={this.onSelect} eventKey={"HOUR"}>HOUR</MenuItem>
+                <MenuItem onSelect={this.onSelect} eventKey={"DAY"}>DAY</MenuItem>
+                <MenuItem onSelect={this.onSelect} eventKey={"WEEK"}>WEEK</MenuItem>
+                <MenuItem onSelect={this.onSelect} eventKey={"MONTH"}>MONTH</MenuItem>
+                <MenuItem onSelect={this.onSelect} eventKey={"YEAR"}>YEAR</MenuItem>
                 <MenuItem divider />
-                <MenuItem onSelect={this.onSelect} eventKey={1.9}>MASLOW1</MenuItem>
-                <MenuItem onSelect={this.onSelect} eventKey={1.10}>MASLOW2</MenuItem>
-                <MenuItem onSelect={this.onSelect} eventKey={1.11}>MASLOW3</MenuItem>
-                <MenuItem onSelect={this.onSelect} eventKey={1.12}>MASLOW4</MenuItem>
-                <MenuItem onSelect={this.onSelect} eventKey={1.13}>MASLOW5</MenuItem>
+                <MenuItem onSelect={this.onSelect} eventKey={"MASLOW1"}>MASLOW1</MenuItem>
+                <MenuItem onSelect={this.onSelect} eventKey={"MASLOW2"}>MASLOW2</MenuItem>
+                <MenuItem onSelect={this.onSelect} eventKey={"MASLOW3"}>MASLOW3</MenuItem>
+                <MenuItem onSelect={this.onSelect} eventKey={"MASLOW4"}>MASLOW4</MenuItem>
+                <MenuItem onSelect={this.onSelect} eventKey={"MASLOW5"}>MASLOW5</MenuItem>
               </NavDropdown>
               <NavItem eventKey={2} href="#">
                 ABOUT
