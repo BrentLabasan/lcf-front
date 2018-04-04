@@ -19,19 +19,27 @@ class App extends React.Component {
             </Navbar.Header>
 
             <Nav>
-              <NavItem eventKey={1} href="#">
-                Link
-              </NavItem>
-              <NavItem eventKey={2} href="#">
-                Link
-              </NavItem>
-              <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-                <MenuItem eventKey={3.1}>Action</MenuItem>
-                <MenuItem eventKey={3.2}>Another action</MenuItem>
-                <MenuItem eventKey={3.3}>Something else here</MenuItem>
+              <NavDropdown eventKey={1} title="FOUNTAIN" id="basic-nav-dropdown">
+                <MenuItem eventKey={1.1}>XLM (Stellar Lumens)</MenuItem>
                 <MenuItem divider />
-                <MenuItem eventKey={3.4}>Separated link</MenuItem>
+                <MenuItem eventKey={1.2}>SECOND</MenuItem>
+                <MenuItem eventKey={1.3}>MINUTE</MenuItem>
+                <MenuItem eventKey={1.4}>HOUR</MenuItem>
+                <MenuItem eventKey={1.5}>DAY</MenuItem>
+                <MenuItem eventKey={1.6}>WEEK</MenuItem>
+                <MenuItem eventKey={1.7}>MONTH</MenuItem>
+                <MenuItem eventKey={1.8}>YEAR</MenuItem>
+                <MenuItem divider />
+                <MenuItem eventKey={1.9}>MASLOW1</MenuItem>
+                <MenuItem eventKey={1.10}>MASLOW2</MenuItem>
+                <MenuItem eventKey={1.11}>MASLOW3</MenuItem>
+                <MenuItem eventKey={1.12}>MASLOW4</MenuItem>
+                <MenuItem eventKey={1.13}>MASLOW5</MenuItem>
               </NavDropdown>
+              <NavItem eventKey={2} href="#">
+                ABOUT
+              </NavItem>
+
             </Nav>
           </Grid>
         </Navbar>
