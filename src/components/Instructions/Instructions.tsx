@@ -152,7 +152,7 @@ export default class Instructions extends React.Component<Props, State> {
             <Grid>
                 <Row className="show-grid">
                     <Col xs={12}>
-                        <input type="button" onClick={this.testApi} / >
+                        {/* <input type="button" onClick={this.testApi} / > // did this early on to test if POSTing from front end to back end could happen, due to Access Allowed CORS errors */}
                         <h1>Instructions To Receive {this.props.tokenName} Tokens</h1>
                         <ol>
                             <li>{checkboxStep1} Enter your Stellar account's public address/key.
