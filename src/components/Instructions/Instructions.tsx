@@ -114,7 +114,7 @@ export default class Instructions extends React.Component<Props, State> {
     }
 
     handleClick = () => {
-        jquery.post("http://167.99.99.67/fountain/sends/create", {            // Source: "dummy data",
+        jquery.post("http://167.99.99.67/sends/create", {            // Source: "dummy data",
             Destination: this.state.address,
             TokenName: this.props.tokenName,
             Amount: 2,
