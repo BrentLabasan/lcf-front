@@ -113,14 +113,13 @@ export default class Instructions extends React.Component<Props, State> {
         jquery.post("https://lcf-back.herokuapp.com/sends/create", {
             Destination: this.state.address,
             TokenName: this.props.tokenName,
-            Amount: 2,
             SendStart: moment().format(),
             beforeSend: () => {
                 this.setState({ processingReceiveRequest: true });
             }
         }).done((data) => {
             this.setState({ processingReceiveRequest: false });
-            alert(this.props.tokenName + " sent to " + this.state.address);
+            alert(data);
         });
     }
 
