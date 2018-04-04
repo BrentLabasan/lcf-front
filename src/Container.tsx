@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Grid } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, Grid } from 'react-bootstrap';
 
 import Fountain from './components/Fountain';
 
@@ -24,7 +24,7 @@ class Container extends React.Component<Props, State> {
 
   onSelect = (selectedToken: any) => {
     console.log(selectedToken);
-    this.setState({selectedToken: selectedToken});
+    this.setState({ selectedToken: selectedToken });
   }
 
   render() {
@@ -40,7 +40,7 @@ class Container extends React.Component<Props, State> {
             </Navbar.Header>
             <Navbar.Collapse>
               <Nav>
-                <NavDropdown eventKey={1} title="FOUNTAIN" id="basic-nav-dropdown">
+                {/* <NavDropdown eventKey={1} title="FOUNTAIN" id="basic-nav-dropdown">
                   <MenuItem onSelect={this.onSelect} eventKey={"XLM"}>XLM (Stellar Lumens)</MenuItem>
                   <MenuItem divider />
                   <MenuItem onSelect={this.onSelect} eventKey={"SECOND"}>SECOND</MenuItem>
@@ -56,15 +56,19 @@ class Container extends React.Component<Props, State> {
                   <MenuItem onSelect={this.onSelect} eventKey={"MASLOW3"}>MASLOW3</MenuItem>
                   <MenuItem onSelect={this.onSelect} eventKey={"MASLOW4"}>MASLOW4</MenuItem>
                   <MenuItem onSelect={this.onSelect} eventKey={"MASLOW5"}>MASLOW5</MenuItem>
-                </NavDropdown>
-                <NavItem eventKey={2} href="#">
+                </NavDropdown> */}
+
+                <NavItem eventKey={2} href="/fountain">
+                  FOUNTAIN
+                </NavItem>
+                {/* <NavItem eventKey={2} href="/about">
                   ABOUT
-              </NavItem>
+                </NavItem> */}
               </Nav>
             </Navbar.Collapse>
           </Grid>
         </Navbar>
-        <br/><br/><br/>
+        <br /><br /><br />
         <Fountain selectedToken={this.state.selectedToken} />
       </div>
     );
