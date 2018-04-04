@@ -110,7 +110,7 @@ export default class Instructions extends React.Component<Props, State> {
     }
 
     handleClick = () => {
-        jquery.post("https://167.99.99.67/sends/create", {
+        jquery.post("https://lcf-back.herokuapp.com/sends/create", {
             Destination: this.state.address,
             TokenName: this.props.tokenName,
             Amount: 2,
