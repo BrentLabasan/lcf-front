@@ -1,6 +1,9 @@
 import * as React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import { Navbar, Nav, NavItem, Grid } from 'react-bootstrap';
 
+import Home from './components/Home';
 import Fountain from './components/Fountain';
 
 // const logo = require('./logo.svg');
@@ -17,9 +20,6 @@ class Container extends React.Component<Props, State> {
   constructor(props: any) {
     super(props);
     // set initial state
-    this.state = {
-      selectedToken: 'SECOND',
-    };
   }
 
   onSelect = (selectedToken: any) => {
@@ -29,7 +29,8 @@ class Container extends React.Component<Props, State> {
 
   render() {
     return (
-      <div style={{maxWidth: 1200, margin: "0 auto", display: "block"}}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", display: "block" }}>
+
         <Navbar inverse={false} fixedTop={true}>
           <Grid>
             <Navbar.Header>
@@ -69,7 +70,14 @@ class Container extends React.Component<Props, State> {
           </Grid>
         </Navbar>
         <br /><br /><br />
-        <Fountain selectedToken={this.state.selectedToken} />
+
+        <Router>
+          <div>
+            <Route exact path="/" component={Home} />
+            <Route path="/fountain" component={Fountain} />
+          </div>
+        </Router>
+
       </div>
     );
   }

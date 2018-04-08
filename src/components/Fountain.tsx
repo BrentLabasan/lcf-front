@@ -23,7 +23,7 @@ export default class Fountain extends React.Component<Props, State>  {
         super(props);
         // set initial state
         this.state = {
-            selectedToken: this.props.selectedToken,
+            selectedToken: 'SECOND',
             issuerAccountId: '',
             address: '',
             addressIsValid: false,
