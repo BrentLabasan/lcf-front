@@ -19,9 +19,11 @@ export default class Home extends React.Component {
 
                     <br /><br />
 
-                    <Button bsStyle="warning" bsSize="large">
-                        GET TST TOKENS
-                    </Button>
+                    <a href="/fountain">
+                        <Button bsStyle="warning" bsSize="large">
+                            GET TST TOKENS
+                        </Button>
+                    </a>
 
                     <br /><br /><br />
 
