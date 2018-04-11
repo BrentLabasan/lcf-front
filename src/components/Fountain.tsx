@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Tabs, Tab } from 'react-bootstrap';
-import Instructions from './Instructions/Instructions';
+import Instructions from './Instructions';
 
 interface State {
     selectedToken: string;
