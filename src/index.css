@@ -6,6 +6,14 @@ body {
   font-family: Tahoma, 'Varela', sans-serif;
 }
 
+#home {
+  text-align: center;
+}
+
+#home .jumbotron {
+  background-color: white;
+}
+
 .spinner {
   /* margin: 100px auto; */
   width: 50px;

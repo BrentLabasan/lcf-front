@@ -1,16 +1,34 @@
 import * as React from 'react';
+import YouTube from 'react-youtube';
+import { Button, Jumbotron } from 'react-bootstrap';
 
 export default class Home extends React.Component {
     public render() {
+
         return (
-            <div>
-                <h1>Labasan Crypto Fountain</h1>
+            <div id="home">
 
-                <h2>FOUNTAIN</h2>
+                <Jumbotron>
+                    <h1>LABASAN CRYPTO FOUNTAIN</h1>
 
-                <h2>LEARN</h2>
+                    <br /><br />
 
-                <h2>SHARE</h2>
+                    <p>
+                        Click the button below to get free Time Saved Tokens!
+                    </p>
+
+                    <br /><br />
+
+                    <Button bsStyle="warning" bsSize="large">
+                        GET TST TOKENS
+                    </Button>
+
+                    <br /><br /><br />
+
+                    <YouTube videoId="LtC1KYsx8To" />
+
+                </Jumbotron>;
+
             </div>
         );
     }
