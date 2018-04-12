@@ -1,4 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+#lcf-front
+
+The frontend for [LabasanCryptoFountain.com](http://LabasanCryptoFountain.com).
+
+It was bootstraped with [wmonk's TypeScript fork](https://github.com/wmonk/create-react-app-typescript/blob/master/packages/react-scripts/template/README.md#heroku) of [Facebook's create-react-app](https://github.com/facebook/create-react-app). I highly recommend wmonk's fork!
+
+It uses React and TypeScript, and is easily deployed to Heroku.
+
+Below is the original README.md.
+
+---
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
