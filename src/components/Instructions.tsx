@@ -2,9 +2,7 @@ import * as React from 'react';
 import { Button, Grid, Row, Col } from 'react-bootstrap';
 import * as StellarSdk from 'stellar-sdk';
 import * as moment from 'moment';
-
 import * as FontAwesome from 'react-icons/lib/md';
-
 import * as jquery from 'jquery';
 
 interface Props {
@@ -30,7 +28,6 @@ export default class Instructions extends React.Component<Props, State> {
 
     constructor(props: Props) {
         super(props);
-        // set initial state
 
         this.state = {
             address: this.props.address,
@@ -106,7 +103,6 @@ export default class Instructions extends React.Component<Props, State> {
         // console.log(e.currentTarget.value)
         // this.setState({address: e.currentTarget.value});
         this.meow(e.currentTarget.value.toUpperCase());
-
     }
 
     handleClick = () => {
@@ -124,7 +120,7 @@ export default class Instructions extends React.Component<Props, State> {
     }
 
     testApi = () => {
-        jquery.post("https://lcf-back.herokuapp.com/user", {            // Source: "dummy data",
+        jquery.post("https://lcf-back.herokuapp.com/user", {
             Destination: this.state.address,
             TokenName: this.props.tokenName,
             Amount: 2,
@@ -156,36 +152,31 @@ export default class Instructions extends React.Component<Props, State> {
                         <h1>Instructions To Receive {this.props.tokenName} Tokens</h1>
                         <ol>
                             <li>{checkboxStep1} Enter your Stellar account's public address/key.
-                    <ul>
+                                <ul>
                                     <li>
                                         {/* <input type="text" onChange={ e => this.addressFieldChange(e) } value={ this.state.address } /> <Button bsStyle="success" onClick={this.handleClick}>Receive</Button> */}
                                         <input style={{ width: '100%' }} placeholder="example: GCDMFH3RSZR3FLBHSUYPLF2XAG5TWZQDHNX5XG4UELVXICNBESDFMXTJ" type="text" onChange={this.addressFieldChange} value={this.state.address} />
                                     </li>
                                 </ul>
                             </li>
-
                             <li>{checkboxStep2} Make sure that your Stellar account has enough XLM in it to support base fees.
-                    <ul>
+                                <ul>
                                     {/* https://www.stellar.org/developers/guides/concepts/fees.html#minimum-account-balance */}
                                     <li>Each additional XLM-based token you add as a trustline to your account requires .5 XLM.
-                            So to be able to add all Time Saved Tokens, have <b>at least 4.5 XLM in your account</b>.
-                        </li>
+                                        So to be able to add all Time Saved Tokens, have <b>at least 4.5 XLM in your account</b>.
+                                    </li>
                                 </ul>
                             </li>
-
                             <li>{checkboxStep3} Allow your Stellar account to accept {this.props.tokenName} tokens.
-                    <ul>
+                                <ul>
                                     <li>Asset Code: {this.props.tokenName}</li>
                                     <li>Issuer Account ID: {this.props.issuerAccountId}</li>
                                 </ul>
                             </li>
-
                             {finalStep}
                             <br />
                             {this.state.processingReceiveRequest && iconProccessing}
-
                         </ol>
-                        {/* this.state.address: {this.state.address} */}
                     </Col>
                 </Row>
             </Grid>
