@@ -38,7 +38,7 @@ export default class Instructions extends React.Component<Props, State> {
         };
     }
 
-    meow = (address: string) => {
+    handleAddressFieldChange = (address: string) => {
         // console.log(address);
 
         // Step 1: Ensure public address/key is valid.
@@ -102,7 +102,7 @@ export default class Instructions extends React.Component<Props, State> {
     addressFieldChange = (e: React.FormEvent<HTMLInputElement>) => {
         // console.log(e.currentTarget.value)
         // this.setState({address: e.currentTarget.value});
-        this.meow(e.currentTarget.value.toUpperCase());
+        this.handleAddressFieldChange(e.currentTarget.value.toUpperCase());
     }
 
     handleClick = () => {
