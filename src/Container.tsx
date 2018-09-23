@@ -6,6 +6,7 @@ import { Navbar, Nav, NavItem, Grid } from 'react-bootstrap';
 import Home from './components/Home';
 import Fountain from './components/Fountain';
 import About from './components/About';
+import Tools from './components/Tools';
 
 // const logo = require('./logo.svg');
 
@@ -66,6 +67,9 @@ class Container extends React.Component<Props, State> {
                 <NavItem eventKey={3} href="/about">
                   ABOUT
                 </NavItem>
+                <NavItem eventKey={4} href="/tools">
+                  TOOLS
+                </NavItem>
               </Nav>
             </Navbar.Collapse>
           </Grid>
@@ -77,6 +81,7 @@ class Container extends React.Component<Props, State> {
             <Route exact path="/" component={Home} />
             <Route path="/fountain" component={Fountain} />
             <Route path="/about" component={About} />
+            <Route path="/tools" component={Tools} />
           </div>
         </Router>
 
