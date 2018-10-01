@@ -10,6 +10,7 @@
     "@types/react-youtube": "^7.4.1",
     "@types/stellar-sdk": "^0.8.2",
     "bootstrap": "^3.3.7",
+    "instascan": "^1.0.0",
     "jquery": "^3.3.1",
     "moment": "^2.22.0",
     "react": "^16.3.0",
