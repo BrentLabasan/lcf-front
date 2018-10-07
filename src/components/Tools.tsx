@@ -1,35 +1,45 @@
 import * as React from 'react';
 var Instascan = require('instascan');
 
-var StellarSdk = require('stellar-sdk');
-var server = new StellarSdk.Server('https://horizon-testnet.stellar.org');
+let StellarSdk = require('stellar-sdk');
+let server = new StellarSdk.Server('https://horizon.stellar.org');
 
-interface State {
-    webcamData: string | null;
-    accountId: string;
-    transaction: string;
-}
-
-export default class Tools extends React.Component<{}, State> {
-
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            webcamData: null,
-            accountId: 'GA3GTTCFBTZURZKV43PHZME2YG7XBEN35WQCI7V45TBPZEP5G7RQ4K45',
-            transaction: ''
-        };
-    }
+export default class Tools extends React.Component<{
+    message: string, // this is the prop type
+  }, {
+    webcamData: any|null, // this is the state type
+    address: string| null
+    }> {
+    state = {
+      webcamData: null,
+      address: null
+    };
 
     public componentDidMount() {
         var scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
-        scanner.addListener('scan', (content: any, image: any) => {
-            console.log(content);
-            this.setState({ webcamData: content });
-            // get accountId from webcamData
-            // store id into state?
-            // get account transactions
-            this.getHistory();
+        scanner.addListener('scan', (qrToString: any, image: any) => {
+            console.log(qrToString);
+            let json: any = JSON.parse(qrToString);
+            console.log("json", json);
+            this.setState({ address: json.stellar.account.id }, () => {
+                
+                server.transactions()
+                .forAccount(this.state.address)
+                .call()
+                .then(function (page: any) {
+                    console.log('Page 1: ');
+                    console.log(page.records);
+                    return page.next();
+                })
+                .then(function (page: any) {
+                    console.log('Page 2: ');
+                    console.log(page.records);
+                })
+                .catch(function (err: any) {
+                    console.log(err);
+                });
+
+            });
         });
 
         Instascan.Camera.getCameras().then(function (cameras: any) {
