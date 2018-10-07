@@ -4,6 +4,8 @@ var Instascan = require('instascan');
 let StellarSdk = require('stellar-sdk');
 let server = new StellarSdk.Server('https://horizon.stellar.org');
 
+// var fs = require('fs');
+
 export default class Tools extends React.Component<{
     message: string, // this is the prop type
   }, {
@@ -23,12 +25,13 @@ export default class Tools extends React.Component<{
             console.log("json", json);
             this.setState({ address: json.stellar.account.id }, () => {
                 
-                server.transactions()
+                server.payments()
                 .forAccount(this.state.address)
                 .call()
                 .then(function (page: any) {
                     console.log('Page 1: ');
                     console.log(page.records);
+
                     return page.next();
                 })
                 .then(function (page: any) {
