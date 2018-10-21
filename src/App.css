@@ -26,3 +26,22 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+#TipperForComputerLabs #heroText {
+  font-size: 136px;
+}
+
+#TipperForComputerLabs #sentence {
+  font-size: 96px;
+  line-height: 116px;
+}
+        
+#TipperForComputerLabs input {
+  height: 96px;
+  font-size: 96px;
+}
+          
+#TipperForComputerLabs select {
+  height: 96px;
+  font-size: 76px;
+}
