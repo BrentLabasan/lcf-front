@@ -8,9 +8,10 @@ export default class Tipper extends React.Component {
 
                 <h2 id="heroText">HOW MUCH TIME DID OUR TUTORS SAVE YOU ?</h2>
                 <p id="sentence">
-                    <input type="text" placeholder={"TUTOR NAME"} value={""} /> saved <input type="text" placeholder={"STUDENT NAME"} value={''} /> <input type="number" min="1" max="99" placeholder="15" />
-
-                    <select name='' >
+                    <input className="underlineBorder" type="text" placeholder={"TUTOR NAME"} value={""} /> 
+                    saved <input className="underlineBorder" type="text" placeholder={"STUDENT NAME"} value={''} /> 
+                    <input className="underlineBorder" type="number" min="1" max="99" placeholder="15" />
+                    <select name='' className="underlineBorder">
                         {/* <option title='SECONDS' value='SECONDS'>SECONDS</option> */}
                         <option title='MINUTES' value='MINUTES'>MINUTES</option>
                         <option title='HOURS' value='HOURS'>HOURS</option>

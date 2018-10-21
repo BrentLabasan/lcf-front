@@ -27,13 +27,19 @@
   to { transform: rotate(360deg); }
 }
 
-#TipperForComputerLabs #heroText {
+#heroText {
   font-size: 136px;
 }
 
-#TipperForComputerLabs #sentence {
+#sentence {
   font-size: 96px;
   line-height: 116px;
+}
+
+.underlineBorder{
+  border:0;
+  border-bottom: 1px solid black;
+  padding-bottom: 25px;
 }
         
 #TipperForComputerLabs input {
