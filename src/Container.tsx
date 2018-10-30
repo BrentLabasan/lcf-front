@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Fountain from './components/Fountain';
 import About from './components/About';
 import Tools from './components/Tools';
+import Tipper from './components/Tipper';
 
 // const logo = require('./logo.svg');
 
@@ -70,6 +71,9 @@ class Container extends React.Component<Props, State> {
                 <NavItem eventKey={4} href="/tools">
                   TOOLS
                 </NavItem>
+                <NavItem eventKey={5} href="/tip">
+                  TIP
+                </NavItem>
               </Nav>
             </Navbar.Collapse>
           </Grid>
@@ -82,6 +86,7 @@ class Container extends React.Component<Props, State> {
             <Route path="/fountain" component={Fountain} />
             <Route path="/about" component={About} />
             <Route path="/tools" component={Tools} />
+            <Route path="/tip" component={Tipper} />
           </div>
         </Router>
 
